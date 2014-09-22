@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioContatos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="733837e0-b23d-44dd-b03b-b457ec1a2fb6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" backcolor="#FF0000"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     contato.`nome` AS contato_nome,
+     contato.`email` AS contato_email,
+     contato.`endereco` AS contato_endereco,
+     contato.`dataNascimento` AS contato_dataNascimento
+FROM
+     `contato` contato]]>
+	</queryString>
+	<field name="contato_nome" class="java.lang.String"/>
+	<field name="contato_email" class="java.lang.String"/>
+	<field name="contato_endereco" class="java.lang.String"/>
+	<field name="contato_dataNascimento" class="java.sql.Date"/>
+	<variable name="ROW_COUNT" class="java.lang.Integer" incrementType="Report" calculation="Count"/>
+	<group name="contato_nome">
+		<groupExpression><![CDATA[$F{contato_nome}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" forecolor="#CC0000" uuid="5a7f13bf-c7eb-45a5-93d1-46801055a9b3"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="0" y="3" width="1" height="47" forecolor="#CC0000" uuid="9f28281a-abec-471a-86d9-82ce7a59f1d7"/>
+			</line>
+			<line>
+				<reportElement x="555" y="2" width="1" height="48" forecolor="#CC0000" uuid="e5a29063-b476-4ef4-ab76-559b6f0f27ad"/>
+			</line>
+			<staticText>
+				<reportElement x="167" y="15" width="261" height="28" forecolor="#CC0000" uuid="a06f098c-488d-4c00-8aa2-cf24ad6fdab1"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTATOS DA EMPRESA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="49" width="555" height="1" forecolor="#CC0000" uuid="716845e7-0d06-4ab5-b0cd-4943090cf359"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="146" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="39" width="126" height="20" forecolor="#CC0000" uuid="7eeacac2-43f1-4713-9328-b72e40d6cb19"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Relatório de contatos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<rectangle>
+				<reportElement x="409" y="0" width="107" height="34" forecolor="#CD6666" uuid="7c2cb2ee-e4d7-4480-9b31-b1e068a900b3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="273" y="0" width="136" height="34" forecolor="#CD6666" uuid="5b346ccc-0ef0-403c-bd5f-c6edb1272d7d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="0" width="131" height="34" forecolor="#CD6666" uuid="74f2fe3b-5185-4fec-9998-6aa77594deb8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="41" y="0" width="101" height="34" forecolor="#FF6666" uuid="06477704-a10a-4525-b957-0aaf6d246d5b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="41" y="0" width="101" height="34" forecolor="#CC0000" backcolor="#FFFFFF" uuid="5e1c3832-c657-4a1b-be04-5fec42e7dee5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="131" height="34" forecolor="#CC0000" uuid="4b97b9d7-e405-489d-ae39-daff837e830d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="0" width="136" height="34" forecolor="#CC0000" uuid="ebc4d8d9-1757-46fc-8206-6d23474e69cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="0" width="107" height="34" forecolor="#CC0000" uuid="21985357-63f7-4b76-950e-91db0ed6e0af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NASCIMENTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="409" y="0" width="107" height="22" forecolor="#CD6666" backcolor="#CC0000" uuid="e2524a61-8f6c-4c8b-9a18-924b71105554"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="273" y="0" width="136" height="22" forecolor="#CD6666" backcolor="#CC0000" uuid="854ab5b0-9896-476e-9e74-4d285e5ce2cf"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="0" width="131" height="22" forecolor="#CD6666" backcolor="#CC0000" uuid="ecf191c6-812f-47b2-9375-7e95efee4145"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="41" y="0" width="101" height="22" forecolor="#FF6666" backcolor="#CC0000" uuid="b4c4f730-7ff7-4f76-a515-e4e4d7faae04"/>
+			</rectangle>
+			<textField>
+				<reportElement x="41" y="0" width="101" height="20" forecolor="#FFFFFF" uuid="c1ccd752-43b9-4a56-9d05-4e42f90a753b"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contato_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="2" width="131" height="20" forecolor="#FFFFFF" uuid="73f61a2c-b4ee-4c21-8da9-2ae7717a4e73"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contato_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="136" height="22" forecolor="#FFFFFF" uuid="57bf71ad-2338-4e04-b8c5-bfaaa20f358e"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contato_endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="0" width="107" height="22" forecolor="#FFFFFF" uuid="5a085ac6-ce7b-48d0-a183-975540cce438"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contato_dataNascimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="209" height="20" forecolor="#CC0000" uuid="dfeb0c3e-78ed-4f20-ba8a-add81b8054d3"/>
+				<textFieldExpression><![CDATA["Total de contatos: " + $V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="479" y="0" width="76" height="20" forecolor="#CC0000" uuid="2fb0141c-b7f5-46b8-bc10-cd8538f3ac17"/>
+				<textFieldExpression><![CDATA["Página: " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
